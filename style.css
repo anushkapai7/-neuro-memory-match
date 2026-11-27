@@ -77,3 +77,51 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;display
 .memory-card.matched .card-front {
     display: flex !important;
 }
+/* COMPLETE CARD DISPLAY FIX */
+.memory-card {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.memory-card .card-inner {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    transform: none !important;
+    transform-style: flat !important;
+}
+
+.memory-card .card-face {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+}
+
+.memory-card .card-back {
+    display: flex !important;
+}
+
+.memory-card .card-front {
+    display: none !important;
+}
+
+.memory-card.flipped .card-back,
+.memory-card.matched .card-back {
+    display: none !important;
+}
+
+.memory-card.flipped .card-front,
+.memory-card.matched .card-front {
+    display: flex !important;
+}
