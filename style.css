@@ -38,3 +38,15 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;display
  .memory-card{min-height:92px}.card-front .card-art{height:42px}
  .mystery-text{font-size:7px!important}
 }
+/* Reliable card reveal fallback */
+.memory-card.flipped .card-back,
+.memory-card.matched .card-back {
+    display: none !important;
+}
+
+.memory-card.flipped .card-front,
+.memory-card.matched .card-front {
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+}
