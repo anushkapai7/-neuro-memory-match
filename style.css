@@ -50,3 +50,30 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;display
     backface-visibility: visible !important;
     -webkit-backface-visibility: visible !important;
 }
+/* SIMPLE CARD REVEAL - NO 3D FLIP */
+.memory-card .card-inner {
+    transform: none !important;
+    transform-style: flat !important;
+}
+
+.memory-card .card-back {
+    display: flex !important;
+    backface-visibility: visible !important;
+    transform: none !important;
+}
+
+.memory-card .card-front {
+    display: none !important;
+    backface-visibility: visible !important;
+    transform: none !important;
+}
+
+.memory-card.flipped .card-back,
+.memory-card.matched .card-back {
+    display: none !important;
+}
+
+.memory-card.flipped .card-front,
+.memory-card.matched .card-front {
+    display: flex !important;
+}
