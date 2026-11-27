@@ -1,180 +1,101 @@
 const levels = {
-  easy: [
-    ["Hippocampus","Memory formation","🧠","📚","The hippocampus is important for forming new declarative memories and helping consolidate information."],
-    ["Cerebellum","Coordination & balance","🎯","🤸","The cerebellum helps coordinate the timing, precision and learning of movements."],
-    ["Amygdala","Emotional processing","💗","😊","The amygdala contributes to processing emotional significance, especially threat-related cues."],
-    ["Thalamus","Sensory relay","🔀","👁️","The thalamus relays and helps regulate most sensory information travelling to the cerebral cortex."],
-    ["Hypothalamus","Homeostasis","🌡️","⚖️","The hypothalamus helps regulate temperature, hunger, thirst, endocrine activity and other homeostatic functions."],
-    ["Medulla","Vital autonomic control","❤️","🫁","The medulla contains important networks involved in cardiovascular and respiratory regulation."]
-  ],
-  medium: [
-    ["Nodes of Ranvier","Saltatory conduction","⚡","🚄","Action potentials are regenerated at nodes of Ranvier, allowing rapid saltatory conduction along myelinated axons."],
-    ["Myelin sheath","Electrical insulation","🧵","🛡️","Myelin increases membrane resistance and decreases capacitance, helping impulses travel faster."],
-    ["Synapse","Neuronal communication","🔗","💬","A synapse is a specialised junction through which one neuron communicates with another cell."],
-    ["Dendrites","Receive incoming signals","🌿","📥","Dendrites receive synaptic inputs and convey graded electrical signals towards the neuron's cell body."],
-    ["Corpus callosum","Hemispheric communication","🌉","↔️","The corpus callosum is a major bundle of commissural fibres connecting the cerebral hemispheres."],
-    ["Reticular formation","Arousal & alertness","🌐","👀","Brainstem reticular networks contribute to wakefulness, attention and regulation of arousal."],
-    ["Basal ganglia","Movement regulation","⚙️","🚶","Basal ganglia circuits help select, initiate and regulate movement, as well as support learning."],
-    ["Prefrontal cortex","Executive functions","🧩","🗂️","Prefrontal regions contribute to planning, working memory, decision-making and cognitive control."]
-  ],
-  hard: [
-    ["Substantia nigra","Dopaminergic motor modulation","⚫","🎛️","Dopamine-producing neurons in the substantia nigra pars compacta modulate basal ganglia motor circuits."],
-    ["Broca's area","Speech production","🗣️","✍️","The left inferior frontal gyrus is commonly involved in speech and language production."],
-    ["Wernicke's region","Language comprehension","👂","📖","Posterior temporal language regions contribute to mapping spoken and written language to meaning."],
-    ["Locus coeruleus","Noradrenergic arousal","🔵","⚡","The locus coeruleus is a major source of brain noradrenaline and influences vigilance and attention."],
-    ["Pyramidal neurons","Cortical output","🔺","📡","Pyramidal neurons are principal excitatory projection neurons in much of the cerebral cortex."],
-    ["GABA","Major inhibitory transmitter","🧪","⛔","GABA is the principal inhibitory neurotransmitter in the mature mammalian central nervous system."],
-    ["NMDA receptor","Synaptic plasticity","🔬","🌱","NMDA receptor activation contributes to calcium-dependent mechanisms involved in long-term synaptic plasticity."],
-    ["Dorsal column","Fine touch & proprioception","🧍","🖐️","The dorsal column–medial lemniscus pathway carries discriminative touch, vibration and conscious proprioception."],
-    ["Spinothalamic tract","Pain & temperature","🔥","🌡️","The anterolateral system carries pain and temperature information towards the thalamus."],
-    ["PCC","Default mode network hub","🧭","🕸️","The posterior cingulate cortex is a prominent hub of the default mode network."],
-    ["Insula","Interoceptive awareness","🫀","🪞","The insula integrates bodily signals and contributes to interoception, emotion and salience processing."],
-    ["H-reflex","Spinal reflex excitability","🦵","📈","The H-reflex is an electrically evoked analogue of the monosynaptic stretch reflex and probes spinal circuitry."]
-  ]
+easy: [
+["I help you catch a ball without having to calculate every movement. Who am I?","Cerebellum","01","The cerebellum compares intended movement with sensory feedback and fine-tunes timing, accuracy and coordination."],
+["Light enters your eye, but I am the place where the optic nerve exits and no light can be detected.","Optic disc","02","The optic disc is where retinal ganglion-cell axons leave the eye. It has no photoreceptors, creating the physiological blind spot."],
+["I help you see the colours of a rainbow, but I struggle when the light goes dim.","Cone cells","03","Cones support colour vision and high visual acuity, and function best in brighter light."],
+["I help you see when the lights go out.","Rod cells","04","Rods are highly sensitive to light and are important for dim-light vision, but they do not mediate colour vision."],
+["When you spin around and suddenly stop, I help detect the rotational movement of your head.","Semicircular canals","05","The semicircular canals detect angular acceleration. Endolymph movement deflects the cupula and bends sensory hair cells."],
+["Close your eyes. You can still tell whether your arm is raised or lowered. Which sensory system helps you?","Proprioception","06","Proprioception provides information about body position and movement through receptors in muscles, tendons and joints."],
+["I help you recognise what you see. Damage to me can affect visual processing.","Occipital cortex","07","The occipital cortex contains the primary visual cortex and surrounding visual-association areas that process visual information."],
+["I help you form new memories. Without me, learning new information can become difficult.","Hippocampus","08","The hippocampus is essential for forming many types of new declarative memories and aspects of spatial memory."]
+],
+medium: [
+["A neuron receives a strong enough stimulus. Suddenly, its membrane potential shoots upwards as sodium rushes inside. What has occurred?","Depolarisation during an action potential","12","Once threshold is reached, voltage-gated sodium channels open and sodium enters the neuron, producing the rapid rising phase of the action potential."],
+["Two neurons communicate without physically touching. Chemical messengers cross the tiny gap between them. What is this junction called?","Chemical synapse","09","At a chemical synapse, neurotransmitter is released from the presynaptic terminal and binds to receptors on the postsynaptic cell."],
+["Some nerve fibres transmit impulses much faster than others because the impulse appears to jump between gaps along the axon. What makes this possible?","Saltatory conduction","11","In myelinated axons, action potentials are regenerated at the nodes of Ranvier, making conduction faster and more energy-efficient."],
+["A neuron fires an action potential and briefly cannot generate another one, no matter how strong the stimulus. What explains this?","Absolute refractory period","12","During the absolute refractory period, voltage-gated sodium channels are inactivated and cannot reopen until the membrane repolarises."],
+["You enter a dark room from bright sunlight. Initially you can barely see, but gradually objects become visible. What is happening?","Dark adaptation","13","During dark adaptation, retinal sensitivity increases. Rod pathways become especially important as photopigments regenerate."],
+["You walk while moving your head, yet your eyes automatically adjust to keep the visual scene stable. Which reflex is responsible?","Vestibulo-ocular reflex","14","The vestibulo-ocular reflex drives eye movements opposite to head movement, helping stabilise the image on the retina."],
+["You stop noticing the smell of your perfume after wearing it for some time. What sensory phenomenon explains this?","Sensory adaptation","15","With sustained stimulation, the perceived response can decline over time. This helps the nervous system prioritise changes in the environment."],
+["When you hear a sound, your brain uses tiny differences in when it reaches each ear to help locate its source. What is this called?","Interaural time difference","16","Interaural time differences are especially useful for locating low-frequency sounds in the horizontal plane."],
+["Repeated activation of certain neural pathways makes communication between neurons more efficient. What phenomenon is involved?","Synaptic plasticity","17","Synaptic plasticity refers to activity-dependent changes in synaptic strength and is one of the cellular foundations of learning and memory."],
+["You touch a hot object and quickly withdraw your hand before consciously processing the pain. What type of response is this?","Spinal reflex","18","A withdrawal reflex is organised through spinal circuits. The response can begin before conscious perception of the painful stimulus."],
+["Looking at a bright light suppresses the secretion of a hormone that normally promotes sleep. Which hormone is affected?","Melatonin","19","Light information reaching the suprachiasmatic nucleus influences the pineal gland through a multisynaptic pathway and suppresses melatonin secretion."],
+["When you focus on a particular object, surrounding visual stimuli become less prominent because neural responses are selectively suppressed. Which mechanism helps enhance contrast?","Lateral inhibition","20","Lateral inhibition allows strongly stimulated sensory pathways to suppress neighbouring pathways, enhancing contrast and sharpening boundaries."]
+],
+hard: [
+["A patient reaches for a glass of water but repeatedly overshoots it. Their muscle strength is normal. What dysfunction could explain this?","Cerebellar dysfunction","21","Dysmetria—overshooting or undershooting a target—is a classic sign of cerebellar dysfunction. The cerebellum helps compare intended and actual movement."],
+["A patient complains that red objects look faded when viewed through one eye. What should this make you suspect?","Possible optic neuropathy","22","Red desaturation can occur with optic nerve dysfunction. It is a clinical clue, not a diagnosis on its own."],
+["A patient has headaches, blurred vision and an enlarged blind spot on perimetry. What finding could account for this?","Papilloedema","23","Papilloedema is optic-disc swelling associated with raised intracranial pressure and can enlarge the blind spot. It requires urgent clinical assessment."],
+["A patient feels the room spinning after turning their head quickly. Which system may be involved?","Vestibular system dysfunction","24","The vestibular apparatus detects head movement and contributes to balance and gaze stabilisation. Vertigo has several possible causes."],
+["A patient cannot identify the position of their toes when their eyes are closed, but can do so when looking. Which sensory ability may be impaired?","Impaired proprioceptive sensation","25","Joint-position sense is part of proprioception. Visual input can partly compensate when proprioceptive information is unreliable."],
+["A patient struggles to distinguish red and green, but has otherwise normal visual acuity. What is a likely explanation?","Red-green colour vision deficiency","26","Red-green colour vision deficiencies commonly involve altered or absent function of particular cone photopigments. Visual acuity may remain normal."],
+["An older adult walks reasonably well but becomes unstable when asked to perform mental arithmetic simultaneously. What phenomenon may be occurring?","Dual-task interference","27","Walking and a cognitive task compete for limited attentional resources. Increased instability during dual-tasking can reveal reduced balance reserve."],
+["A participant initially struggles with mirror tracing but improves considerably after repeated attempts. What process is demonstrated?","Sensorimotor adaptation and motor learning","28","Practice can improve performance by updating sensorimotor predictions and refining motor commands. Mirror tracing is a classic visuomotor learning task."],
+["A patient has difficulty recognising objects visually despite intact primary visual sensation. What type of dysfunction could explain this?","Higher-order visual processing dysfunction","29","Visual agnosia describes impaired recognition despite adequate basic visual input; the difficulty involves higher-order visual processing."],
+["A patient experiences imbalance that worsens when visual input is removed. What broader problem might this suggest?","Possible proprioceptive or vestibular impairment","30","Balance depends on integrating visual, vestibular and somatosensory information. Removing vision can expose difficulty compensating for unreliable input from another system."]
+]
 };
 
-const screens = ["welcome-screen","game-screen","result-screen"];
-let currentLevel = "easy", deck = [], flipped = [], matchedPairs = 0, moves = 0, score = 0;
-let seconds = 0, timerId = null, lockBoard = false, started = false, toastTimeout = null;
-
-const $ = id => document.getElementById(id);
-const showScreen = id => screens.forEach(s => $(s).classList.toggle("hidden", s !== id));
-const shuffle = array => {
-  const copy = [...array];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
+const levelInfo = {
+easy:["Level 1 · Easy: Know Your Brain","Identify the brain structure or sensory system from its mystery clue."],
+medium:["Level 2 · Intermediate: The Neuro Detective","Use the scientific clue to identify the underlying neurophysiological principle."],
+hard:["Level 3 · Hard: Clinical Neuro Detective","Interpret each clinical scenario and match it with the most likely neurophysiological explanation."]
 };
-const formatTime = total => `${String(Math.floor(total/60)).padStart(2,"0")}:${String(total%60).padStart(2,"0")}`;
-
-function startGame(level) {
-  currentLevel = level;
-  const pairs = levels[level];
-  deck = shuffle(pairs.flatMap((pair,index) => [
-    {pairId:index, type:"concept", label:pair[0], emoji:pair[2], tag:"CONCEPT"},
-    {pairId:index, type:"function", label:pair[1], emoji:pair[3], tag:"FUNCTION"}
-  ]));
-  flipped = []; matchedPairs = 0; moves = 0; score = 0; seconds = 0;
-  lockBoard = false; started = false;
-  clearInterval(timerId); timerId = null;
-  $("level-title").textContent = `${level[0].toUpperCase()+level.slice(1)} challenge`;
-  $("moves").textContent = "0";
-  $("matches").textContent = `0/${pairs.length}`;
-  $("timer").textContent = "00:00";
-  $("score").textContent = "0";
-  $("remaining-label").textContent = `${pairs.length} pairs to go`;
-  $("progress-fill").style.width = "0%";
-  $("fact-box").classList.add("hidden");
-  $("game-board").className = `game-board ${level}`;
-  renderBoard();
-  showScreen("game-screen");
+const screens=["welcome-screen","game-screen","result-screen"];
+let currentLevel="easy",deck=[],flipped=[],matchedPairs=0,moves=0,score=0,seconds=0,timerId=null,lockBoard=false,started=false;
+const $=id=>document.getElementById(id);
+const showScreen=id=>screens.forEach(s=>$(s).classList.toggle("hidden",s!==id));
+const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;};
+const formatTime=t=>`${String(Math.floor(t/60)).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`;
+const safe=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function startGame(level){
+ currentLevel=level;const pairs=levels[level];
+ deck=shuffle(pairs.flatMap((p,i)=>[{pairId:i,type:"mystery",label:p[0]},{pairId:i,type:"answer",label:p[1],image:p[2]}]));
+ flipped=[];matchedPairs=0;moves=0;score=0;seconds=0;lockBoard=false;started=false;clearInterval(timerId);timerId=null;
+ $("level-title").textContent=levelInfo[level][0];$("level-subtitle").textContent=levelInfo[level][1];
+ $("moves").textContent="0";$("matches").textContent=`0/${pairs.length}`;$("timer").textContent="00:00";$("score").textContent="0";
+ $("remaining-label").textContent=`${pairs.length} pairs to go`;$("progress-fill").style.width="0%";$("fact-box").classList.add("hidden");
+ $("game-board").className=`game-board ${level}`;renderBoard();showScreen("game-screen");
 }
-
-function renderBoard() {
-  const board = $("game-board");
-  board.innerHTML = "";
-  deck.forEach((card,index) => {
-    const button = document.createElement("button");
-    button.className = "memory-card";
-    button.type = "button";
-    button.dataset.index = index;
-    button.setAttribute("aria-label", "Face-down memory card");
-    button.innerHTML = `<span class="card-inner">
-      <span class="card-face card-back">✦</span>
-      <span class="card-face card-front">
-        <span class="card-emoji">${card.emoji}</span>
-        <strong>${escapeHTML(card.label)}</strong>
-        <small>${card.tag}</small>
-      </span></span>`;
-    button.addEventListener("click", () => flipCard(index,button));
-    board.appendChild(button);
-  });
-  board.style.gridTemplateColumns = `repeat(${currentLevel === "easy" ? 4 : 4}, minmax(0,1fr))`;
+function renderBoard(){
+ const board=$("game-board");board.innerHTML="";
+ deck.forEach((card,i)=>{
+  const b=document.createElement("button");b.className=`memory-card ${card.type}-card`;b.type="button";b.setAttribute("aria-label","Face-down memory card");
+  const content=card.type==="mystery"
+   ? `<span class="mystery-mark">?</span><strong class="mystery-text">${safe(card.label)}</strong><small>MYSTERY CLUE</small>`
+   : `<img class="card-art" src="assets/illustration-${card.image}.jpg" alt="" loading="lazy"><strong>${safe(card.label)}</strong><small>ANSWER</small>`;
+  b.innerHTML=`<span class="card-inner"><span class="card-face card-back"><span class="back-mark">✦</span><small>FLIP ME</small></span><span class="card-face card-front">${content}</span></span>`;
+  b.addEventListener("click",()=>flipCard(i,b));board.appendChild(b);
+ });
 }
-
-function escapeHTML(value) {
-  return value.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function startTimer(){if(started)return;started=true;timerId=setInterval(()=>{$("timer").textContent=formatTime(++seconds);},1000);}
+function flipCard(i,b){
+ if(lockBoard||b.classList.contains("flipped")||b.classList.contains("matched"))return;
+ startTimer();b.classList.add("flipped");b.setAttribute("aria-label",deck[i].label);flipped.push({button:b,card:deck[i]});
+ if(flipped.length!==2)return;
+ moves++;$("moves").textContent=moves;const [a,c]=flipped;
+ if(a.card.pairId===c.card.pairId&&a.card.type!==c.card.type){
+  lockBoard=true;setTimeout(()=>{
+   [a,c].forEach(x=>{x.button.classList.add("matched");x.button.classList.remove("flipped");x.button.disabled=true;});
+   matchedPairs++;score+=Math.max(50,100-(moves-matchedPairs)*5);
+   const total=levels[currentLevel].length;$("matches").textContent=`${matchedPairs}/${total}`;$("score").textContent=score;
+   $("remaining-label").textContent=matchedPairs===total?"All pairs found!":`${total-matchedPairs} pairs to go`;
+   $("progress-fill").style.width=`${matchedPairs/total*100}%`;
+   $("fact-text").textContent=levels[currentLevel][a.card.pairId][3];$("fact-box").classList.remove("hidden");
+   flipped=[];lockBoard=false;if(matchedPairs===total)finishGame();
+  },420);
+ }else{
+  lockBoard=true;setTimeout(()=>{a.button.classList.remove("flipped");c.button.classList.remove("flipped");a.button.setAttribute("aria-label","Face-down memory card");c.button.setAttribute("aria-label","Face-down memory card");flipped=[];lockBoard=false;},1150);
+ }
 }
-
-function startTimer() {
-  if (started) return;
-  started = true;
-  timerId = setInterval(() => {
-    seconds++;
-    $("timer").textContent = formatTime(seconds);
-  },1000);
+function finishGame(){
+ clearInterval(timerId);$("final-score").textContent=score;$("final-moves").textContent=moves;$("final-time").textContent=formatTime(seconds);
+ $("final-accuracy").textContent=`${Math.round(matchedPairs/Math.max(moves,1)*100)}%`;
+ $("result-heading").textContent="Brilliant brainwork!";$("result-message").textContent="You solved every mystery. Your neuroscience knowledge is growing!";showScreen("result-screen");
 }
-
-function flipCard(index,button) {
-  if (lockBoard || button.classList.contains("flipped") || button.classList.contains("matched")) return;
-  startTimer();
-  button.classList.add("flipped");
-  button.setAttribute("aria-label", `${deck[index].label}, ${deck[index].tag.toLowerCase()}`);
-  flipped.push({index,button,card:deck[index]});
-  if (flipped.length === 2) {
-    moves++;
-    $("moves").textContent = moves;
-    const [first,second] = flipped;
-    if (first.card.pairId === second.card.pairId && first.card.type !== second.card.type) {
-      lockBoard = true;
-      setTimeout(() => {
-        first.button.classList.add("matched");
-        second.button.classList.add("matched");
-        first.button.classList.remove("flipped");
-        second.button.classList.remove("flipped");
-        first.button.disabled = true; second.button.disabled = true;
-        matchedPairs++;
-        score += Math.max(50, 100 - (moves - matchedPairs) * 5);
-        $("matches").textContent = `${matchedPairs}/${levels[currentLevel].length}`;
-        $("score").textContent = score;
-        $("remaining-label").textContent = matchedPairs === levels[currentLevel].length ? "All pairs found!" : `${levels[currentLevel].length-matchedPairs} pairs to go`;
-        $("progress-fill").style.width = `${matchedPairs/levels[currentLevel].length*100}%`;
-        const fact = levels[currentLevel][first.card.pairId][4];
-        $("fact-text").textContent = fact;
-        $("fact-box").classList.remove("hidden");
-        flipped = []; lockBoard = false;
-        if (matchedPairs === levels[currentLevel].length) finishGame();
-      },350);
-    } else {
-      lockBoard = true;
-      setTimeout(() => {
-        first.button.classList.remove("flipped");
-        second.button.classList.remove("flipped");
-        first.button.setAttribute("aria-label","Face-down memory card");
-        second.button.setAttribute("aria-label","Face-down memory card");
-        flipped = []; lockBoard = false;
-      },950);
-    }
-  }
-}
-
-function finishGame() {
-  clearInterval(timerId);
-  const accuracy = Math.round((matchedPairs / Math.max(moves,1))*100);
-  $("final-score").textContent = score;
-  $("final-moves").textContent = moves;
-  $("final-time").textContent = formatTime(seconds);
-  $("final-accuracy").textContent = `${accuracy}%`;
-  let heading = "Brilliant brainwork!";
-  let message = "You connected every concept. Your neuroscience knowledge is growing!";
-  if (moves <= levels[currentLevel].length + 2) message = "Incredible memory! You found the pairs with very few moves.";
-  else if (accuracy < 45) message = "Well done for completing the challenge. Try again and see if you can improve your score!";
-  $("result-heading").textContent = heading;
-  $("result-message").textContent = message;
-  showScreen("result-screen");
-}
-
-function restart() { startGame(currentLevel); }
-function chooseLevel() { clearInterval(timerId); showScreen("welcome-screen"); }
-function showToast(message) {
-  const toast = $("toast"); toast.textContent = message; toast.classList.add("show");
-  clearTimeout(toastTimeout); toastTimeout = setTimeout(()=>toast.classList.remove("show"),1800);
-}
-
-document.querySelectorAll(".level-card").forEach(button => button.addEventListener("click",()=>startGame(button.dataset.level)));
-$("back-button").addEventListener("click",chooseLevel);
-$("restart-button").addEventListener("click",restart);
-$("play-again-button").addEventListener("click",restart);
-$("choose-level-button").addEventListener("click",chooseLevel);
+function restart(){startGame(currentLevel);}
+function chooseLevel(){clearInterval(timerId);showScreen("welcome-screen");}
+document.querySelectorAll(".level-card").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.level)));
+$("back-button").addEventListener("click",chooseLevel);$("restart-button").addEventListener("click",restart);
+$("play-again-button").addEventListener("click",restart);$("choose-level-button").addEventListener("click",chooseLevel);

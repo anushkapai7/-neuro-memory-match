@@ -1,21 +1,17 @@
 # Neuro Memory Match
 
-A standalone neuroscience-themed memory game. Match each concept with its correct function.
+An illustrated neuroscience memory game with three exhibition-ready levels.
 
-## Play locally
-Open `index.html` in a modern web browser.
+- **Level 1 – Easy: Know Your Brain** (8 pairs)
+- **Level 2 – Intermediate: The Neuro Detective** (12 pairs)
+- **Level 3 – Hard: Clinical Neuro Detective** (10 pairs)
+
+Flip a mystery clue and its matching answer. Correct matches reveal an illustrated neuro note.
+
+## Run locally
+Open `index.html` in a browser.
 
 ## Publish with GitHub Pages
-1. Upload `index.html`, `style.css`, and `script.js` to the root of your public repository.
-2. Open **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch **main** and folder **/(root)**, then save.
-5. Wait for GitHub Pages to publish the site. Your URL will be:
-   `https://YOUR-USERNAME.github.io/neuro-memory-match/`
+Upload the contents of this folder to the root of your GitHub repository. In **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/(root)`, then save.
 
-## Files
-- `index.html` — page structure
-- `style.css` — responsive visual design
-- `script.js` — card data, matching logic, timer and scoring
-
-The game uses no build tools or dependencies. Google Fonts are optional; a system sans-serif fallback is included.
+Keep the `assets` folder intact when uploading.
