@@ -58,17 +58,41 @@ function startGame(level){
  $("remaining-label").textContent=`${pairs.length} pairs to go`;$("progress-fill").style.width="0%";$("fact-box").classList.add("hidden");
  $("game-board").className=`game-board ${level}`;renderBoard();showScreen("game-screen");
 }
-function renderBoard(){
- const board=$("game-board");board.innerHTML="";
- deck.forEach((card,i)=>{
-  const b=document.createElement("button");b.className=`memory-card ${card.type}-card`;b.type="button";b.setAttribute("aria-label","Face-down memory card");
-  const content=card.type==="mystery"
-   ? `<span class="mystery-mark">?</span><strong class="mystery-text">${safe(card.label)}</strong><small>MYSTERY CLUE</small>`
-   : `<img class="card-art" src="assets/illustration-${card.image}.jpg" alt="" loading="lazy"><strong>${safe(card.label)}</strong><small>ANSWER</small>`;
-  b.innerHTML=`<span class="card-inner"><span class="card-face card-back"><span class="back-mark">✦</span><small>FLIP ME</small></span><span class="card-face card-front">${content}</span></span>`;
-  b.addEventListener("click",()=>flipCard(i,b));board.appendChild(b);
- });
+
+function renderBoard() {
+    const board = $("game-board");
+    board.innerHTML = "";
+
+    deck.forEach((card, i) => {
+        const b = document.createElement("button");
+        b.className = `memory-card ${card.type}-card`;
+        b.type = "button";
+        b.setAttribute("aria-label", "Face-down memory card");
+
+        const content = card.type === "mystery"
+            ? `<span class="mystery-mark">?</span>
+               <strong class="mystery-text">${safe(card.label)}</strong>
+               <small>MYSTERY CLUE</small>`
+            : `<img class="card-art"
+                    src="assets/illustration-${card.image}.jpg"
+                    alt=""
+                    loading="lazy">
+               <strong>${safe(card.label)}</strong>
+               <small>ANSWER</small>`;
+
+        b.innerHTML = `
+            <span class="card-back">
+                <span class="back-mark">✦</span>
+                <small>FLIP ME</small>
+            </span>
+            <span class="card-front">${content}</span>
+        `;
+
+        b.addEventListener("click", () => flipCard(i, b));
+        board.appendChild(b);
+    });
 }
+
 function startTimer(){if(started)return;started=true;timerId=setInterval(()=>{$("timer").textContent=formatTime(++seconds);},1000);}
 function flipCard(i,b){
  if(lockBoard||b.classList.contains("flipped")||b.classList.contains("matched"))return;
